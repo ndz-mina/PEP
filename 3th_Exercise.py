@@ -2,16 +2,16 @@
 def A(x, y):
     matrix = []
     n = 0; m = -1
-    for i in range(x):
+    for _ in range(x):
         row = []
         m += 1
         if m % 2 == 1:
-            for j in range (y):
+            for _ in range (y):
                 n += 1
                 row.insert(0, n)
             matrix.append(row)
         else:
-            for j in range (y):
+            for _ in range (y):
                 n += 1
                 row.append(n)
             matrix.append(row)
