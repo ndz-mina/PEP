@@ -1,5 +1,7 @@
 #Realizar matriz NxN, con N dado por el usuario y con cierto patrón.
-N = input('Ingrese el tamaño de la matriz cuadrada: ')
+
+N = input('Ingrese el tamaño de la matriz cuadrada, este debe ser par y mayor a cero: ')
+
 def A(N):
     Matrix = []
     n = 0
@@ -18,9 +20,14 @@ def A(N):
         else:                
           Matrix.append(row)
     return Matrix
-if N.isnumeric():
-    N = int(N)
-    Matrix = A(N)
-    print('La matriz generada será:\n{}'.format(Matrix))
-else:
-    print('Error en el dato ingresado.')
+
+if not N.isnumeric():
+    raise TypeError('El tamaño de la matriz debe ser un número entero.')
+
+N = int(N)
+
+if N == 0 or N % 2 != 0:
+    raise ValueError('El valor ingresado debe ser par y mayor que cero.')
+
+Matrix = A(N)
+print('La matriz generada será:\n{}'.format(Matrix))
