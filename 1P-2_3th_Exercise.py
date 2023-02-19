@@ -2,23 +2,34 @@
 
 N = input('Ingrese el tamaño de la matriz cuadrada, este debe ser par y mayor a cero: ')
 
-def A(N):
+def A(N:int):
+
     Matrix = []
     n = 0
+
     for i in range(N):
+
         row = []
+
         for _ in range(N):
+
             n += 1
             row.append(n)
+            
         if i > 1:
+
             x = i // 2
+
             if i % 2 == 0:
                 Matrix.insert(x, row)
+                
             else:
                 x += 1
                 Matrix.insert(x, row)
+
         else:                
           Matrix.append(row)
+
     return Matrix
 
 if not N.isnumeric():

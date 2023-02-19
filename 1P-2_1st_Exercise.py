@@ -4,22 +4,32 @@
 
 N = input('Ingrese un valor numérico mayor a uno: ')
 
-def porcent(x, y):
+def porcent(x:int, y:int):
+
     num_porcent = x * 100 / y
+
     return num_porcent
 
-def str_num(x):
+def str_num(x:int):
+    
     while x != 1 and x != 89:
+
         sum = 0
         digit = str(x)
+
         for i in digit:
+
             y = int(i)
             sum += y ** 2
+
         x = sum
+
     if x == 1:
         c = 0
+        
     elif x == 89:
         c = 1
+
     return c
 
 if not N.isnumeric():
@@ -36,4 +46,6 @@ for x in range(1, N):
 pct = porcent(count, N)
 rest = 100 - pct
 
-print('El porcentaje de números menor a {}, cuyo los números cadenas llegan a 89 es de: {:.2f}%\nMientras los que llegan a 1 es de: {:.2f}%'. format(N, pct, rest))
+print('El porcentaje de números menor a {}, cuyo los números\
+       cadenas llegan a 89 es de: {:.2f}%\nMientras los que\
+       llegan a 1 es de: {:.2f}%'. format(N, pct, rest))
