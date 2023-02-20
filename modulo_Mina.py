@@ -246,3 +246,6 @@ def identy_matrix(m):
         x = TypeError
     
     return x
+
+def ec_to_matrix(ec):
+    pass
