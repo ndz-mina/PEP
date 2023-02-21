@@ -247,5 +247,10 @@ def identy_matrix(m):
     
     return x
 
-def ec_to_matrix(ec):
-    pass
+def test_eq(equation):
+    
+    pass    #Crear función que valide si es una ecuación.
+
+def eq_to_matrix(equations):
+
+    pass    #Crear matrices "A" y "b" a partir de una lista de strings
