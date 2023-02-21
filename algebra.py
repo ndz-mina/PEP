@@ -189,9 +189,9 @@ def transpose(A):
 
 def SLE(*args):
 
-    #Crear función que me entrege una matriz A con los valores de las ecuaciones
+    if modulo_Mina.test(*args) == "class 'str'":
 
-    if modulo_Mina.test_matrix(A) == 'Valid':
+        #Crear función que me entrege dos matrices, "A" y "b" con los valores de las ecuaciones
         
         len_matrix = modulo_Mina.len_matrix(A)
         m = len_matrix[0]; n = len_matrix[1]
@@ -199,11 +199,11 @@ def SLE(*args):
 
         if deter != 0:
 
-            A = eval(A); b = eval(b)
             inverse_A = inverse_gauss_jordan(A)
             sol = matrix_multiplication(inverse_A, b)
+            sol = transpose(sol)
 
-            x = 'Colocar la sol'
+            x = sol
 
         else:
 
