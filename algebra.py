@@ -187,14 +187,26 @@ def transpose(A):
 
     return x
 
-def SLE(*args):
+def SLE(*equations):
 
-    if modulo_Mina.test(*args) == "class 'str'":
+    eq = list(equations)
+    m = len(eq)
+    count = 0
 
-        #Crear función que me entrege dos matrices, "A" y "b" con los valores de las ecuaciones
-        
+    for t in range(m):
+
+        if modulo_Mina.test_eq(eq[t]) == "equation'": 
+            count += 1
+
+        else: 
+            count += 0
+
+    if count == m:
+
+        convert = modulo_Mina.eq_to_matrix(eq)
+        A = convert[0]; b = convert[1]
         len_matrix = modulo_Mina.len_matrix(A)
-        m = len_matrix[0]; n = len_matrix[1]
+        n = len_matrix[1]
         deter = determinant(A)
 
         if deter != 0:
