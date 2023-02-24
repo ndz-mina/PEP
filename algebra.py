@@ -142,14 +142,15 @@ def cross_product(A,B):
 
                 x = 0; y = 0; z = (A[0][0] * B[0][1]) - (A[0][1] * B[0][0])
 
+                c = 'x = 0i + 0j + {:.2f}k\nx = (0, 0, {:.2f})'.format(z, z)
+
             else:
 
                 x = (A[0][1] * B[0][2]) - (A[0][2] * B[0][1])
                 y = (A[0][2] * B[0][0]) - (A[0][0] * B[0][2])
                 z = (A[0][0] * B[0][1]) - (A[0][1] * B[0][0])
 
-            c = print('x = {:.2f}i + {:.2f}j + {:.2f}k\n\
-                      x = ({:.2f}, {:.2f}, {:.2f})'.format(x, y, z, x, y, z))
+                c = 'x = {:.2f}i + {:.2f}j + {:.2f}k\nx = ({:.2f}, {:.2f}, {:.2f})'.format(x, y, z, x, y, z)
 
         else:
             c = ValueError
