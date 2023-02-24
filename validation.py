@@ -152,15 +152,21 @@ def valList(var1, var2 = None, var3 = None):
                     
                         if t == var2:
                             x = True
+                        
+                        else:
+                            x = False
 
                     elif var3 == 'value' and modulo_Mina.test(var2) == "class 'list'":
                         var2 = eval(var2)
 
                         if var1 == var2:
                             x = True
+                        
+                        else:
+                            x = False
 
                     else:
-                        x = False
+                        x = TypeError
 
                 else:
                     x = ValueError
