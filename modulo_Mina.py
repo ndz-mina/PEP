@@ -60,7 +60,7 @@ def test_num(n):
         elif i == '+':
             add += 1; u = t.find('+')
         elif i == '-':
-            rest += 1; u = t.find('-')
+            rest += 1; v = t.rfind('-')
         elif i.isalpha():
             if i == 'j':
                 im += 1
@@ -78,9 +78,10 @@ def test_num(n):
 
         elif (len(t) >= 2) and (im == 1) and ((t[-1] == 'j' and (t[0] != '+' 
             or t[-2] != '+' or t[-2] != '-') and (t[0] != '.' or t[-2] != '.' 
-            or t[u-1] != '.' or t[u+1] != '.')) or (t[u-1] == 'j' and (t[0] != '+'
-            or t[-1] != '+' or t[-1] != '-') and (t[0] != '.' or t[-1] != '.' 
-            or t[u-2] != '.' or t[u+1] != '.'))) and not (add == 1 and rest == 2):                     #Complex Numbers
+            or t[u-1] != '.' or t[u+1] != '.' or t[v-1] != '.' or t[v+1] != '.')) 
+            or ((t[u-1] == 'j' or t[v-1] == 'j') and (t[0] != '+' or t[-1] != '+'
+            or t[-1] != '-') and (t[0] != '.' or t[-1] != '.' or t[u-2] != '.'
+            or t[u+1] != '.' or t[v-2] != '.' or t[v+1] != '.'))) and not (add == 1 and rest == 2):    #Complex Numbers
             x = "class 'complex'"
 
         else:
