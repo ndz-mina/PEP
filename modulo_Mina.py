@@ -127,7 +127,12 @@ def test(var):
 def number(var):
     t_num = test_num(var)
     if t_num == "class 'int'":
-        var = int(var)
+
+        if var == '-0' or var == '+0':
+            var = 0
+            
+        else:
+            var = int(var)
 
     elif t_num == "class 'float'":
         var = float(var)

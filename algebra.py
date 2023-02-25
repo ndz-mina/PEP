@@ -196,7 +196,7 @@ def SLE(*equations):
 
     for t in range(m):
 
-        if modulo_Mina.test_eq(eq[t]) == "equation'": 
+        if modulo_Mina.test_eq(eq[t]) == 'equation': 
             count += 1
 
         else: 
